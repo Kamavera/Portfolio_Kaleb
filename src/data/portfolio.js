@@ -130,8 +130,8 @@ export const experience = [
       es: 'Internado'
     },
     description: {
-      en: 'Completed internship through strategic alliance between CIRACET Corp. and Universidad de Puerto Rico - Ponce, focusing on IT infrastructure, systems support, and cybersecurity.',
-      es: 'Completé internado a través de alianza estratégica entre CIRACET Corp. y Universidad de Puerto Rico - Ponce, enfocándome en infraestructura de TI, soporte de sistemas y ciberseguridad.'
+      en: 'Completed internship through strategic alliance between CIRACET Corp. and Universidad de Puerto Rico - Ponce. Utilized Power Apps and Microsoft Entra ID to manage SharePoint and the internal CIRACET system, while also supporting IT infrastructure and systems.',
+      es: 'Completé internado a través de alianza estratégica entre CIRACET Corp. y Universidad de Puerto Rico - Ponce. Utilicé Power Apps y Microsoft Entra ID para administrar SharePoint y el sistema interno de CIRACET, además de apoyar en infraestructura de TI.'
     },
     responsibilities: {
       en: [
