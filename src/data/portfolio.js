@@ -521,7 +521,7 @@ export const professionalPortfolio = {
 export const contact = {
   email: 'kalebmartinez9@gmail.com',
   github: 'https://github.com/Kamavera',
-  linkedin: 'https://linkedin.com/in/kalebmartinez',
+  linkedin: 'https://linkedin.com/in/kaleb-martinez-b7b1b7364',
   resume: '/resume.pdf',
 };
 
