@@ -138,13 +138,21 @@ export const experience = [
         'IT Infrastructure Management',
         'Systems Support & Troubleshooting',
         'Cybersecurity Implementation',
-        'Technology Systems Support'
+        'Technology Systems Support',
+        'Software Installation & Updates on Workstations',
+        'Provisioning New Laptops with Required Apps',
+        'Joining Devices to Domain',
+        'Preparing Equipment for Decommissioning'
       ],
       es: [
         'Gestión de Infraestructura de TI',
         'Soporte y Resolución de Sistemas',
         'Implementación de Ciberseguridad',
-        'Soporte de Sistemas Tecnológicos'
+        'Soporte de Sistemas Tecnológicos',
+        'Instalación y Actualización de Software en Equipos',
+        'Configuración de Laptops Nuevas con Apps Requeridas',
+        'Integración de Dispositivos al Dominio',
+        'Preparación de Equipos para Decomisión'
       ]
     },
     skills: ['IT Infrastructure', 'Systems Support', 'Cybersecurity', 'Technology Systems'],
