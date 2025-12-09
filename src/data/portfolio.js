@@ -330,7 +330,7 @@ export const professionalPortfolio = {
             en: 'Full-stack nutrition platform with CMS, e-commerce, and appointment booking. (Code is private)',
             es: 'Plataforma de nutrición full-stack con CMS, comercio electrónico y reserva de citas. (El código es privado)'
           },
-          image: '/projects/nisha-nutrition.jpg',
+          image: '/nisha-nutrition-preview.png',
           link: 'https://nishanutrition.com'
         }
       ]
