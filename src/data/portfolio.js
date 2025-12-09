@@ -519,7 +519,7 @@ export const professionalPortfolio = {
  * Social links and contact information
  */
 export const contact = {
-  email: 'kaleb.martinez@example.com',
+  email: 'kalebmartinez9@gmail.com',
   github: 'https://github.com/Kamavera',
   linkedin: 'https://linkedin.com/in/kalebmartinez',
   resume: '/resume.pdf',
