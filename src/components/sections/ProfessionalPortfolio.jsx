@@ -199,7 +199,7 @@ const ProfessionalPortfolio = () => {
                                     <div className="md:flex">
                                         <div className="md:w-1/3 h-48 md:h-auto relative">
                                             <img
-                                                src={project.image}
+                                                src={`${import.meta.env.BASE_URL}${project.image.replace('./', '')}`}
                                                 alt={t(project.title)}
                                                 className="w-full h-full object-cover"
                                                 onError={(e) => {
