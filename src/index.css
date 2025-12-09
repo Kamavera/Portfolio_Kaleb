@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-earth-950 text-cream-100;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    line-height: 1.75;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Subtle texture overlay for earthy feel */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    z-index: 9999;
+  }
+}
+
+@layer components {
+  /* Custom scrollbar with earthy tones */
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-earth-900;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-earth-700 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary-500;
+  }
+
+  /* Focus visible styles for accessibility - Mint green */
+  *:focus-visible {
+    @apply outline-2 outline-offset-2 outline-primary-400 ring-2 ring-primary-400 ring-offset-2 ring-offset-earth-950;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-400 to-sage-400;
+  }
+
+  .glass {
+    @apply bg-earth-800/40 backdrop-blur-lg border border-earth-600/30;
+  }
+
+  /* Earthy shadow utilities */
+  .shadow-earth {
+    box-shadow: 0 4px 6px -1px rgba(45, 42, 38, 0.3), 0 2px 4px -1px rgba(45, 42, 38, 0.2);
+  }
+
+  .shadow-earth-lg {
+    box-shadow: 0 10px 15px -3px rgba(45, 42, 38, 0.3), 0 4px 6px -2px rgba(45, 42, 38, 0.2);
+  }
+
+  .shadow-mint {
+    box-shadow: 0 4px 14px -2px rgba(157, 223, 186, 0.2);
+  }
+}
