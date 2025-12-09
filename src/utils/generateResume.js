@@ -39,7 +39,7 @@ export const generateResume = (language = 'en') => {
 
     yPos += 6;
     doc.setFontSize(9);
-    doc.text(`${contact.email} | GitHub: kalebmartinez | LinkedIn: kalebmartinez`, 105, yPos, { align: 'center' });
+    doc.text(`${contact.email} | GitHub: Kamavera | LinkedIn: kaleb-martinez-b7b1b7364`, 105, yPos, { align: 'center' });
 
     yPos += 3;
     doc.setDrawColor(...accentColor);
