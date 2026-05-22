@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Gantt Chart — Portal CIRACET CAPA</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, sans-serif; background: #0f172a; color: #e2e8f0; padding: 40px; }
+  h1 { font-size: 24px; margin-bottom: 4px; color: #f8fafc; }
+  h2 { font-size: 14px; color: #64748b; font-weight: 400; margin-bottom: 32px; }
+  table { width: 100%; border-collapse: separate; border-spacing: 0 4px; }
+  th { text-align: left; font-size: 11px; color: #64748b; font-weight: 600; padding: 6px 8px; }
+  th.month { text-align: center; width: 16%; }
+  td { padding: 10px 8px; font-size: 13px; vertical-align: middle; }
+  td.task { font-weight: 500; white-space: nowrap; }
+  td.task span.date { display: block; font-size: 11px; color: #64748b; font-weight: 400; margin-top: 2px; }
+  td.bar-cell { position: relative; }
+  .bar-inner { height: 22px; border-radius: 4px; min-width: 4px; }
+  .plan { background: #7ec8a0; }
+  .dev { background: #6bafb8; }
+  .test { background: #d4a96a; }
+  .deploy { background: #9b8ec4; }
+  .empty { background: transparent; }
+  .legend { display: flex; gap: 24px; margin-top: 28px; font-size: 12px; align-items: center; }
+  .legend-item { display: flex; align-items: center; gap: 6px; }
+  .legend-swatch { width: 16px; height: 16px; border-radius: 3px; }
+</style>
+</head>
+<body>
+<h1>Portal CIRACET CAPA — Cronograma</h1>
+<h2>Sistema ISO 9001 · SPRING 2026 · 5 meses</h2>
+
+<table>
+  <tr>
+    <th>Fase / Entregable</th>
+    <th class="month">ENE</th><th class="month">FEB</th><th class="month">MAR</th><th class="month">ABR</th><th class="month">MAY</th>
+  </tr>
+  <tr>
+    <td class="task">📋 Análisis de Requisitos<span class="date">Ene 12 – Feb 2</span></td>
+    <td class="bar-cell"><div class="bar-inner plan" style="width:100%"></div></td>
+    <td class="bar-cell"><div class="bar-inner plan" style="width:30%"></div></td>
+    <td><div class="bar-inner empty"></div></td>
+    <td><div class="bar-inner empty"></div></td>
+    <td><div class="bar-inner empty"></div></td>
+  </tr>
+  <tr>
+    <td class="task">📋 Diseño Listas SharePoint<span class="date">Ene 26 – Feb 16</span></td>
+    <td class="bar-cell"><div class="bar-inner plan" style="width:30%"></div></td>
+    <td class="bar-cell"><div class="bar-inner plan" style="width:80%"></div></td>
+    <td><div class="bar-inner empty"></div></td>
+    <td><div class="bar-inner empty"></div></td>
+    <td><div class="bar-inner empty"></div></td>
+  </tr>
+  <tr>
+    <td class="task">💻 Módulo NC — Desarrollo<span class="date">Feb 9 – Mar 23</span></td>
+    <td><div class="bar-inner empty"></div></td>
+    <td class="bar-cell"><div class="bar-inner dev" style="width:100%"></div></td>
+    <td class="bar-cell"><div class="bar-inner dev" style="width:100%"></div></td>
+    <td><div class="bar-inner empty"></div></td>
+    <td><div class="bar-inner empty"></div></td>
+  </tr>
+  <tr>
+    <td class="task">💻 Módulo CA — Desarrollo<span class="date">Mar 2 – Abr 6</span></td>
+    <td><div class="bar-inner empty"></div></td>
+    <td><div class="bar-inner empty"></div></td>
+    <td class="bar-cell"><div class="bar-inner dev" style="width:100%"></div></td>
+    <td class="bar-cell"><div class="bar-inner dev" style="width:40%"></div></td>
+    <td><div class="bar-inner empty"></div></td>
+  </tr>
+  <tr>
+    <td class="task">💻 Dashboard Global<span class="date">Mar 23 – Abr 13</span></td>
+    <td><div class="bar-inner empty"></div></td>
+    <td><div class="bar-inner empty"></div></td>
+    <td class="bar-cell"><div class="bar-inner dev" style="width:50%"></div></td>
+    <td class="bar-cell"><div class="bar-inner dev" style="width:80%"></div></td>
+    <td><div class="bar-inner empty"></div></td>
+  </tr>
+  <tr>
+    <td class="task">💻 Autenticación Azure AD<span class="date">Mar 16 – Abr 6</span></td>
+    <td><div class="bar-inner empty"></div></td>
+    <td><div class="bar-inner empty"></div></td>
+    <td class="bar-cell"><div class="bar-inner dev" style="width:100%"></div></td>
+    <td class="bar-cell"><div class="bar-inner dev" style="width:40%"></div></td>
+    <td><div class="bar-inner empty"></div></td>
+  </tr>
+  <tr>
+    <td class="task">🧪 Pruebas de Integración<span class="date">Abr 6 – Abr 27</span></td>
+    <td><div class="bar-inner empty"></div></td>
+    <td><div class="bar-inner empty"></div></td>
+    <td><div class="bar-inner empty"></div></td>
+    <td class="bar-cell"><div class="bar-inner test" style="width:100%"></div></td>
+    <td><div class="bar-inner empty"></div></td>
+  </tr>
+  <tr>
+    <td class="task">🧪 Correcciones y Ajustes<span class="date">Abr 20 – May 4</span></td>
+    <td><div class="bar-inner empty"></div></td>
+    <td><div class="bar-inner empty"></div></td>
+    <td><div class="bar-inner empty"></div></td>
+    <td class="bar-cell"><div class="bar-inner test" style="width:80%"></div></td>
+    <td class="bar-cell"><div class="bar-inner test" style="width:30%"></div></td>
+  </tr>
+  <tr>
+    <td class="task">🚀 Despliegue en Producción<span class="date">May 4 – May 11</span></td>
+    <td><div class="bar-inner empty"></div></td>
+    <td><div class="bar-inner empty"></div></td>
+    <td><div class="bar-inner empty"></div></td>
+    <td><div class="bar-inner empty"></div></td>
+    <td class="bar-cell"><div class="bar-inner deploy" style="width:50%"></div></td>
+  </tr>
+  <tr>
+    <td class="task">📄 Documentación Final<span class="date">May 11 – May 18</span></td>
+    <td><div class="bar-inner empty"></div></td>
+    <td><div class="bar-inner empty"></div></td>
+    <td><div class="bar-inner empty"></div></td>
+    <td><div class="bar-inner empty"></div></td>
+    <td class="bar-cell"><div class="bar-inner deploy" style="width:50%"></div></td>
+  </tr>
+</table>
+
+<div class="legend">
+  <div class="legend-item"><div class="legend-swatch plan"></div> Planificación</div>
+  <div class="legend-item"><div class="legend-swatch dev"></div> Desarrollo</div>
+  <div class="legend-item"><div class="legend-swatch test"></div> Pruebas</div>
+  <div class="legend-item"><div class="legend-swatch deploy"></div> Despliegue / Docs</div>
+</div>
+</body>
+</html>

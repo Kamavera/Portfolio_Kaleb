@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Flow Chart — Portal CIRACET CAPA</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, sans-serif; background: #0f172a; color: #e2e8f0; padding: 40px; }
+  h1 { font-size: 24px; margin-bottom: 4px; }
+  h2 { font-size: 14px; color: #64748b; font-weight: 400; margin-bottom: 36px; }
+  .flow { display: flex; flex-direction: column; align-items: center; gap: 0; }
+  .box { border: 2px solid #334155; border-radius: 12px; padding: 18px 28px; text-align: center; max-width: 500px; background: #1e293b; margin: 6px 0; }
+  .box.start { border-color: #7ec8a0; background: #0f2a1e; }
+  .box.end { border-color: #9b8ec4; background: #1a1530; }
+  .box h3 { font-size: 16px; margin-bottom: 4px; color: #f8fafc; }
+  .box p { font-size: 13px; color: #94a3b8; }
+  .arr { color: #7ec8a0; font-size: 28px; text-align: center; line-height: 1; margin: -4px 0; }
+  .arr-label { font-size: 11px; color: #64748b; text-align: center; margin: 0; }
+  .branch { display: flex; gap: 40px; margin: 12px 0; }
+  .branch-col { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+  .branch-col .side-label { font-size: 12px; color: #d4a96a; font-weight: 700; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 1px; }
+  .box.small { padding: 12px 18px; max-width: 240px; }
+  .box.small h3 { font-size: 13px; }
+  .box.small p { font-size: 11px; }
+  .merge { color: #6bafb8; font-size: 26px; text-align: center; margin: 8px 0; }
+</style>
+</head>
+<body>
+<h1>Portal CIRACET CAPA — Diagrama de Flujo</h1>
+<h2>NC → Acción Correctiva → Plan de Acción → Cierre</h2>
+
+<div class="flow">
+
+  <div class="box start">
+    <h3>🔍 Se detecta una No Conformidad</h3>
+    <p>Auditoría interna, inspección o reporte</p>
+  </div>
+  <div class="arr">▼</div>
+
+  <div class="box">
+    <h3>📝 Registrar NC</h3>
+    <p>Módulo NC · Tipo, severidad, causas, asignado</p>
+  </div>
+  <div class="arr">▼</div>
+
+  <div class="box">
+    <h3>🔐 Verificar acceso (Azure AD)</h3>
+    <p>¿Usuario en CIRACET NC Users o CAPA Admins?</p>
+  </div>
+  <div class="arr">▼</div>
+  <div class="arr-label">✓ Acceso concedido</div>
+
+  <div class="box">
+    <h3>📊 Dashboard NC</h3>
+    <p>Listado con filtros · Badges de estatus · KPIs</p>
+  </div>
+  <div class="arr">▼</div>
+  <div class="arr-label">Se requiere Acción Correctiva</div>
+
+  <div class="box">
+    <h3>🔗 Crear Acción Correctiva</h3>
+    <p>Módulo CA · Vinculada a NC · Plan de 5 pasos</p>
+  </div>
+  <div class="arr">▼</div>
+
+  <div class="branch">
+    <div class="branch-col">
+      <div class="side-label">Responsable</div>
+      <div class="box small"><h3>📋 Mis Acciones</h3><p>Ver pasos asignados</p></div>
+      <div class="arr">▼</div>
+      <div class="box small"><h3>✏️ Actualizar</h3><p>[UPDATE - fecha - user]</p></div>
+      <div class="arr">▼</div>
+      <div class="box small"><h3>✅ Completar</h3><p>[COMPLETADO - fecha]</p></div>
+    </div>
+    <div class="branch-col">
+      <div class="side-label">QA Auditor</div>
+      <div class="box small"><h3>🔍 Inspeccionar</h3><p>Revisar plan y notas</p></div>
+      <div class="arr">▼</div>
+      <div class="box small"><h3>📄 Generar PDF</h3><p>Reporte de inspección</p></div>
+    </div>
+    <div class="branch-col">
+      <div class="side-label">Admin</div>
+      <div class="box small"><h3>🏁 Cierre de CA</h3><p>Validar pasos completados</p></div>
+      <div class="arr">▼</div>
+      <div class="box small"><h3>⚠️ ¿Pasos pendientes?</h3><p>Diálogo cierre forzoso</p></div>
+    </div>
+  </div>
+
+  <div class="merge">▼</div>
+
+  <div class="box">
+    <h3>📜 Historial de Auditoría</h3>
+    <p>Lista "Historial" SharePoint · Quién, qué, cuándo</p>
+  </div>
+  <div class="arr">▼</div>
+
+  <div class="box end">
+    <h3>✅ CA Cerrada · Cumplimiento ISO 9001</h3>
+    <p>Trazabilidad completa: NC → CA → Plan → Cierre · PDF generado</p>
+  </div>
+
+</div>
+</body>
+</html>

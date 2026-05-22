@@ -68,6 +68,72 @@ export const projects = [
       }
     }
   },
+  {
+    id: 2,
+    title: {
+      en: 'CIRACET CAPA Portal — ISO 9001 Compliance System',
+      es: 'Portal CIRACET CAPA — Sistema de Cumplimiento ISO 9001'
+    },
+    shortDescription: {
+      en: 'SPFx enterprise portal for non-conformity and corrective action management',
+      es: 'Portal empresarial SPFx para gestión de no conformidades y acciones correctivas'
+    },
+    clientImpact: {
+      en: 'Digitized ISO 9001 quality management for CIRACET Corp., replacing manual paper-based processes with an integrated SharePoint portal featuring two modules (NC and CA), Azure AD security, PDF reporting, and full audit trail.',
+      es: 'Digitalizó la gestión de calidad ISO 9001 para CIRACET Corp., reemplazando procesos manuales en papel con un portal integrado en SharePoint con dos módulos (NC y CA), seguridad Azure AD, reportes PDF y trazabilidad completa de auditoría.'
+    },
+    longDescription: {
+      en: 'A production SharePoint Framework (SPFx) enterprise application built for CIRACET Corp. to manage ISO 9001 non-conformities and corrective actions. Features two independent web parts (NC and CA modules), a global dashboard, Azure AD group-based authentication, PDF report generation with jsPDF, action plan tracking with 5-step completion workflow, forced-close validation, and full audit history. Built with React 17, TypeScript, PnPjs v3, and Fluent UI v8 — all running inside SharePoint with zero external servers.',
+      es: 'Una aplicación empresarial SharePoint Framework (SPFx) construida para CIRACET Corp. para gestionar no conformidades y acciones correctivas ISO 9001. Incluye dos web parts independientes (módulos NC y CA), dashboard global, autenticación por grupos de Azure AD, generación de reportes PDF con jsPDF, seguimiento de planes de acción con flujo de 5 pasos, validación de cierre forzoso e historial completo de auditoría. Construido con React 17, TypeScript, PnPjs v3 y Fluent UI v8 — todo dentro de SharePoint sin servidores externos.'
+    },
+    image: '/projects/ciracet-capa.png',
+    technologies: ['SPFx', 'React 17', 'TypeScript', 'PnPjs', 'SharePoint', 'Azure AD', 'Fluent UI', 'jsPDF', 'Power Automate', '.sppkg'],
+    techIcons: [SiTypescript, FaReact, SiJavascript],
+    category: ['Enterprise', 'SharePoint', 'ISO 9001', 'Full-Stack'],
+    liveUrl: null,
+    githubUrl: null,
+    featured: true,
+    highlights: {
+      en: [
+        'Two independent SPFx web parts (NC + CA modules)',
+        'Azure AD group-based authentication — zero custom passwords',
+        'PnPjs fluent API for SharePoint REST/OData communication',
+        '5-step action plan with structured [COMPLETADO] markers',
+        'Forced-close validation dialog for ISO 9001 audit compliance',
+        'One-click PDF inspection reports with jsPDF',
+        'Power Automate-ready lists for notifications and approvals',
+        'Field mapping pattern — 50+ SharePoint internal names abstracted',
+        'Full audit trail via SharePoint History list',
+        'Deployed as .sppkg packages to SharePoint App Catalog'
+      ],
+      es: [
+        'Dos web parts SPFx independientes (módulos NC + CA)',
+        'Autenticación por grupos Azure AD — sin contraseñas propias',
+        'API fluida de PnPjs para comunicación REST/OData con SharePoint',
+        'Plan de acción de 5 pasos con marcadores [COMPLETADO] estructurados',
+        'Diálogo de validación de cierre forzoso para cumplimiento ISO 9001',
+        'Reportes PDF de inspección a un clic con jsPDF',
+        'Listas preparadas para Power Automate (notificaciones y aprobaciones)',
+        'Patrón de mapeo de campos — 50+ nombres internos de SharePoint abstraídos',
+        'Trazabilidad completa de auditoría mediante lista Historial',
+        'Desplegado como paquetes .sppkg en SharePoint App Catalog'
+      ]
+    },
+    metrics: {
+      en: {
+        performance: 'Production deployed',
+        timeline: '3 months',
+        type: 'Senior Capstone Project',
+        location: 'CIRACET Corp., Puerto Rico'
+      },
+      es: {
+        performance: 'Desplegado en producción',
+        timeline: '3 meses',
+        type: 'Proyecto Final de Grado',
+        location: 'CIRACET Corp., Puerto Rico'
+      }
+    }
+  }
 ];
 
 /**
@@ -334,6 +400,52 @@ export const professionalPortfolio = {
           link: 'https://nishanutrition.com'
         }
       ]
+    },
+    finalProject: {
+      title: { en: 'Final Project — CIRACET CAPA Portal', es: 'Proyecto Final — Portal CIRACET CAPA' },
+      subtitle: {
+        en: 'ISO 9001 Non-Conformity & Corrective Action Management System',
+        es: 'Sistema de Gestión de No Conformidades y Acciones Correctivas ISO 9001'
+      },
+      description: {
+        en: 'Senior capstone project developed for CIRACET Corp. A SharePoint Framework enterprise application that digitizes ISO 9001 quality management processes. Includes two independent modules (NC and CA), Azure AD authentication, PDF reporting, and full audit trail.',
+        es: 'Proyecto final de grado desarrollado para CIRACET Corp. Una aplicación empresarial SharePoint Framework que digitaliza los procesos de gestión de calidad ISO 9001. Incluye dos módulos independientes (NC y CA), autenticación Azure AD, reportes PDF y trazabilidad completa de auditoría.'
+      },
+      documentation: {
+        title: { en: 'Project Documentation', es: 'Documentación del Proyecto' },
+        items: [
+          {
+            title: { en: 'User Manual', es: 'Manual de Usuario' },
+            description: { en: 'Complete user guide for all modules and screens', es: 'Guía completa de usuario para todos los módulos y pantallas' },
+            file: '/docs/ciracet/Manual_Usuario_CIRACET.pdf'
+          },
+          {
+            title: { en: 'Source Code', es: 'Código Fuente' },
+            description: { en: 'Complete SPFx monorepo with annotated source files', es: 'Monorepo SPFx completo con archivos fuente anotados' },
+            file: '/docs/ciracet/ciracet-portal-codigo-fuente.zip'
+          },
+          {
+            title: { en: 'Flow Chart', es: 'Diagrama de Flujo' },
+            description: { en: 'NC → CA → Action Plan → Closure workflow diagram', es: 'Diagrama del flujo NC → CA → Plan de Acción → Cierre' },
+            file: '/docs/ciracet/flowchart.html'
+          },
+          {
+            title: { en: 'Gantt Chart', es: 'Gráfica Gantt' },
+            description: { en: 'Project timeline: development phases and milestones', es: 'Cronograma del proyecto: fases de desarrollo e hitos' },
+            file: '/docs/ciracet/gantt.html'
+          },
+          {
+            title: { en: 'Auth Documentation', es: 'Documentación de Autenticación' },
+            description: { en: 'Azure AD group-based security architecture explained', es: 'Arquitectura de seguridad por grupos Azure AD explicada' },
+            file: '/docs/ciracet/auth-documentacion.md'
+          },
+          {
+            title: { en: 'Code Reference', es: 'Referencia de Código' },
+            description: { en: 'Annotated key files with line-by-line Spanish explanations', es: 'Archivos clave anotados con explicaciones en español línea por línea' },
+            file: '/docs/ciracet/lineas-codigo.md'
+          }
+        ]
+      }
     },
     competencies: {
       title: { en: 'Competencies', es: 'Competencias' },

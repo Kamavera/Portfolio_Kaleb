@@ -130,6 +130,7 @@ const Projects = () => {
 
                 {/* Action Buttons */}
                 <div className="flex gap-3 mt-6">
+                  {project.liveUrl && (
                   <Button
                     href={project.liveUrl}
                     target="_blank"
@@ -140,6 +141,7 @@ const Projects = () => {
                     <ExternalLink className="w-4 h-4 mr-2" />
                     {t(sections.projects.liveDemo)}
                   </Button>
+                  )}
                   {project.githubUrl === null && (
                     <div className="flex-1 flex items-center justify-center px-4 py-3 bg-earth-700 rounded-lg text-sm text-cream-600 border border-earth-600">
                       🔒 {t(sections.projects.privateRepo)}

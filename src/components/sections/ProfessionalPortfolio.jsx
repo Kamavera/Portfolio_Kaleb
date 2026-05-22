@@ -7,6 +7,8 @@ import Badge from '../ui/Badge';
 import Button from '../ui/Button';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { professionalPortfolio, sections } from '../../data/portfolio';
+import { GanttChart } from './GanttChart';
+import { FlowChart } from './FlowChart';
 /**
  * Professional Portfolio Section - SICI3016/SICI4998 Requirements
  * Displays general information, student life, and professional improvement
@@ -14,6 +16,7 @@ import { professionalPortfolio, sections } from '../../data/portfolio';
 const ProfessionalPortfolio = () => {
     const { t, language } = useLanguage();
     const [isGenerating, setIsGenerating] = useState(false);
+    const [activeDoc, setActiveDoc] = useState(null); // 0-5 para los docs, null = ninguno expandido
 
     const handleGenerateResume = async () => {
         setIsGenerating(true);
@@ -241,6 +244,109 @@ const ProfessionalPortfolio = () => {
                                     </div>
                                 </Card>
                             ))}
+                        </div>
+                    </div>
+
+                    {/* Final Project — CIRACET CAPA Portal */}
+                    <div className="mt-8">
+                        <h4 className="text-xl font-bold text-cream-100 mb-4 flex items-center gap-2">
+                            <BookOpen className="w-5 h-5 text-primary-400" />
+                            {t(professionalPortfolio.studentLife.finalProject.title)}
+                        </h4>
+                        {professionalPortfolio.studentLife.finalProject.subtitle && (
+                            <p className="text-cream-500 italic mb-3 -mt-2">
+                                {t(professionalPortfolio.studentLife.finalProject.subtitle)}
+                            </p>
+                        )}
+                        <p className="text-cream-600 mb-6">
+                            {t(professionalPortfolio.studentLife.finalProject.description)}
+                        </p>
+
+                        {professionalPortfolio.studentLife.finalProject.documentation && (
+                            <>
+                                <h5 className="text-lg font-semibold text-cream-200 mb-3">
+                                    {t(professionalPortfolio.studentLife.finalProject.documentation.title)}
+                                </h5>
+                                <div className="grid md:grid-cols-2 gap-4 mb-6">
+                                    {professionalPortfolio.studentLife.finalProject.documentation.items
+                                        .filter((_, index) => index === 2 || index === 3) // Solo Flow Chart y Gantt
+                                        .map((doc, originalIndex) => {
+                                        const isExpandable = true;
+                                        const isExpanded = activeDoc === originalIndex;
+
+                                        return (
+                                        <Card
+                                            key={originalIndex}
+                                            className={`p-4 transition-all duration-200 cursor-pointer hover:shadow-lg hover:-translate-y-0.5 ${
+                                                isExpanded
+                                                    ? 'border-emerald-500/60 ring-1 ring-emerald-500/30 bg-emerald-500/5'
+                                                    : 'border-dashed border-emerald-700/40 hover:border-emerald-500/50 bg-emerald-500/[0.02]'
+                                            }`}
+                                            onClick={() => setActiveDoc(activeDoc === originalIndex ? null : originalIndex)}
+                                        >
+                                            <div className="flex items-start gap-3">
+                                                <div className="w-8 h-8 rounded-lg bg-emerald-500/15 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                                    <span className="text-emerald-400 text-sm font-bold">0{originalIndex + 1}</span>
+                                                </div>
+                                                <div className="flex-1">
+                                                    <h6 className="font-semibold text-cream-100 flex items-center gap-2">
+                                                        {t(doc.title)}
+                                                        <span className={`text-xs ml-auto transition-transform ${isExpanded ? 'rotate-180' : ''}`}>
+                                                            {isExpanded ? '▲' : '▼'}
+                                                        </span>
+                                                    </h6>
+                                                    <p className="text-cream-600 text-sm mt-1">
+                                                        {t(doc.description)}
+                                                        {!isExpanded && (
+                                                            <span className="block text-emerald-500/70 text-xs mt-1 font-medium">↗ Click para expandir</span>
+                                                        )}
+                                                        {isExpanded && (
+                                                            <span className="block text-emerald-400/70 text-xs mt-1 font-medium">↗ Click para colapsar</span>
+                                                        )}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </Card>
+                                    )})}
+                                </div>
+
+                                {/* Flow Chart — expandable */}
+                                {activeDoc === 2 && (
+                                    <div className="mb-8 animate-in fade-in">
+                                        <FlowChart />
+                                    </div>
+                                )}
+
+                                {/* Gantt Chart — expandable */}
+                                {activeDoc === 3 && (
+                                    <div className="mb-8 animate-in fade-in">
+                                        <GanttChart />
+                                    </div>
+                                )}
+                            </>
+                        )}
+
+                        {/* Evaluación SICI 4065 */}
+                        <div className="mt-6 pt-6 border-t border-earth-700">
+                            <a
+                                href="/docs/ciracet/EVAL_FINAL_SICI4065.pdf"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="block"
+                            >
+                                <Card className="p-4 hover:border-primary-500/50 transition-colors cursor-pointer">
+                                    <div className="flex items-start gap-3">
+                                        <div className="w-8 h-8 rounded-lg bg-amber-500/15 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                            <span className="text-amber-400 text-sm font-bold">📋</span>
+                                        </div>
+                                        <div>
+                                            <h6 className="font-semibold text-cream-100">Evaluación Final — SICI 4065</h6>
+                                            <p className="text-cream-600 text-sm mt-1">Práctica en Programación · Segunda evaluación · PDF</p>
+                                            <span className="text-amber-500/70 text-xs mt-1 font-medium inline-block">↗ Abrir PDF</span>
+                                        </div>
+                                    </div>
+                                </Card>
+                            </a>
                         </div>
                     </div>
 
